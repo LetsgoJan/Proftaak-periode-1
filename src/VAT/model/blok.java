@@ -12,7 +12,6 @@ public class blok implements Ishape {
         this.hoogte = hoogte;
     }
 
-
     @Override
     public double getBlokInhoud() {
         double inhoud = this.breedte * this.lengte * this.hoogte;

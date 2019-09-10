@@ -6,8 +6,8 @@ public class Shapes {
         if (shapeType == null){
             return null;
         }
-        if (shapeType == "blok"){
-            return new blok();
+        if (shapeType == "bol"){
+            return new bol();
         }
         return null;
     }
