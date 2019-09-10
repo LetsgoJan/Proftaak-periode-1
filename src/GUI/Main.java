@@ -1,4 +1,4 @@
-package com.company;
+package GUI;
 
 import model.Ishape;
 import model.Shapes;
