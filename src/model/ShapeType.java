@@ -1,4 +1,4 @@
-package VAT.model;
+package model;
 
 public class ShapeType {
 }
