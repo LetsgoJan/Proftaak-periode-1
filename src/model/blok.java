@@ -1,6 +1,6 @@
-package VAT.model;
+package model;
 
-public class blok implements Ishape {
+public class blok {
 
     private double breedte;
     private double lengte;
@@ -36,9 +36,4 @@ public class blok implements Ishape {
         this.hoogte = hoogte;
     }
 
-    @Override
-    public double getBlokInhoud() {
-        double inhoud = this.breedte * this.lengte * this.hoogte;
-        return inhoud;
-    }
 }
