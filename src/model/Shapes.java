@@ -1,7 +1,5 @@
 package model;
 
-import model.Ishape;
-import model.bol;
 
 public class Shapes {
     //use getShape method to get object of type shape
