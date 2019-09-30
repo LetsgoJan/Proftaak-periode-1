@@ -1,12 +1,31 @@
 package BusinessLogic;
 
-import java.awt.*;
+import model.Ishape;
+import model.bol;
+
 import java.util.ArrayList;
-
+/*
+ShapeManager maakt een lijst van de objecten en geeft de hele lijst terug
+toevoegen- vinden - verwijderen- wijzigen is mogelijk
+ */
 public class ShapeManager {
-    private ArrayList<Shape> shapes;
+    private ArrayList<Ishape> shapes;
 
-    public void addShape(Shape shape){
+    public ShapeManager(){
+         shapes = new ArrayList<>();
+    }
 
+    public ArrayList<Ishape> getShapes() {
+
+        return shapes;
+    }
+
+    public void setShapes(ArrayList<Ishape> shapes) {
+
+        this.shapes = shapes;
+    }
+
+    public void addShape(Ishape eenShape){
+        shapes.add(eenShape);
     }
 }

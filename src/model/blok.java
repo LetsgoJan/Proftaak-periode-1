@@ -1,12 +1,12 @@
-package model.oudeModellen;
+package model;
 
-public class blok {
+public class blok implements Ishape {
 
     private double breedte;
     private double lengte;
     private double hoogte;
 
-    private blok(double breedte, double lengte, double hoogte) {
+    public blok(double breedte, double lengte, double hoogte) {
         this.breedte = breedte;
         this.lengte = lengte;
         this.hoogte = hoogte;
@@ -36,4 +36,8 @@ public class blok {
         this.hoogte = hoogte;
     }
 
+    @Override
+    public double shapeInhoud() {
+        return 1;
+    }
 }

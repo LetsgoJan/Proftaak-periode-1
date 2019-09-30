@@ -12,6 +12,9 @@ public class viewControl extends JFrame {
     private JPanel jPanelOverzicht;
     private JTable jTable;
 
+    private ShapePanel shPanel;
+    private ShapeTypePanel shTypePanel;
+
     public viewControl(){
         initFrame();
         shapesOverzicht();
@@ -44,11 +47,11 @@ public class viewControl extends JFrame {
         getContentPane().add(jPanelOverzicht);
     }
 
-    public static void main(String[] args){
-        JFrame.setDefaultLookAndFeelDecorated(true);
-        viewControl window = new viewControl();
-        window.setVisible(true);
-    }
+//    public static void main(String[] args){
+//        JFrame.setDefaultLookAndFeelDecorated(true);
+//        viewControl window = new viewControl();
+//        window.setVisible(true);
+//    }
 
 
 }
