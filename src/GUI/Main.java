@@ -1,28 +1,31 @@
 package GUI;
 
+import BusinessLogic.ShapeManager;
+import DbManager.ShapeDbManager;
+import model.blok;
+import model.bol;
+import model.cilinder;
+
 import javax.swing.*;
 
 public class Main {
 
     public static void main(String[] args){
-        JFrame.setDefaultLookAndFeelDecorated(true);
-        MainPanel window = new MainPanel();
-        window.setVisible(true);
 
-/*
-test object:
-        ShapeManager shapeLijst = new ShapeManager();
-        ShapesType shapeVorm = new ShapesType();
+        ShapeManager shapemanager = new ShapeManager();
+        /*
+        test
+        */
+        shapemanager.addShape(new bol(5.0 ));
+        shapemanager.addShape(new blok(20, 10, 12));
+        shapemanager.addShape(new cilinder(10, 5));
+        System.out.println(shapemanager.getshape()); // print de hele lijst
 
-        Ishape eenBol = shapeVorm.getShape("BOL", 0, 0, 0, 5 );// make a shape
-        System.out.print(eenBol.shapeInhoud()+"\n"); // print de inhoud
 
-        shapeLijst.addShape(eenBol); // add to de lijst
-        shapeLijst.addShape(eenBol); // add to de lijst
-        shapeLijst.addShape(eenBol); // add to de lijst
+        SwingUtilities.invokeLater(new MainPanel(shapemanager, shapemanager.getShapesLijst()));
 
-        System.out.print(shapeLijst.getShapes()); // print de hele lijst
- */
+        new ShapeDbManager();
+
 
     }
 
