@@ -22,7 +22,7 @@ public class Main {
         System.out.println(shapemanager.getshape()); // print de hele lijst
 
 
-        SwingUtilities.invokeLater(new MainPanel(shapemanager, shapemanager.getShapesLijst()));
+        SwingUtilities.invokeLater(new MainFrame());
 
         new ShapeDbManager();
 

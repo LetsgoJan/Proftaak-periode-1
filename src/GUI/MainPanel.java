@@ -7,14 +7,16 @@ import model.bol;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 /*
     main overzicht
  */
 
-public class MainPanel implements Runnable {
-    private JFrame frame;
+public class MainPanel {
+    private MainFrame mainFrame;
     private ShapeManager shapeManager;
     private List<Ishape> shapes;
 
@@ -22,49 +24,40 @@ public class MainPanel implements Runnable {
     private JButton buttonAdd, buttonDel, buttonChange, buttonPrint, buttonSave;
 
 
-    public MainPanel(ShapeManager shapemanager, List<Ishape> lijst){
+    public MainPanel(MainFrame mainFrame, ShapeManager shapemanager){
         this.shapeManager = shapemanager;
-        this.shapes = lijst;
+        this.shapes = shapemanager.getShapesLijst();
+        this.mainFrame = mainFrame;
     }
 
-    @Override
-    public void run() {
-        frame = new JFrame("Main frame");
-        frame.setPreferredSize(new Dimension(830,500));
-        frame.setResizable(false);
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        components(frame.getContentPane());
-        frame.pack();
-        frame.setVisible(true);
-    }
+    public JPanel getPanel1(){
+        JLabel labelOverzicht = new JLabel("Overzicht");
+        labelOverzicht.setFont(new Font("Dialog", Font.BOLD, 16));
+        labelOverzicht.setForeground(new Color(40,86,120));
+        labelOverzicht.setBounds(320,10,600,30);
 
-    private void components(Container contentPane) {
-
-        JLabel titelOverzicht = new JLabel("Overzicht");
-        titelOverzicht.setFont(new Font("Dialog", Font.BOLD, 16));
-        titelOverzicht.setForeground(new Color(40,86,120));
-        titelOverzicht.setBounds(320,10,600,30);
-
-        maakShapesLijst(shapes);
-
-        jtable.setEnabled(false);
-
-        JScrollPane scrollPane = new JScrollPane(jtable);
+        JScrollPane scrollPane = new JScrollPane(getJTable(shapes));
         scrollPane.setBounds(10,70,780,300);
 
         JPanel paneloverzicht = new JPanel();
         paneloverzicht.setLayout(null);
         paneloverzicht.setBackground(Color.yellow);
         paneloverzicht.setBounds(10,20,800,400);
-        paneloverzicht.add(titelOverzicht);
+        paneloverzicht.add(labelOverzicht);
         paneloverzicht.add(scrollPane);
 
-        contentPane.add(paneloverzicht);
+        return  paneloverzicht;
+    }
 
-
+    public JPanel getPanel2(){
         JPanel buttonPanel = new JPanel();
         buttonPanel.setBounds(10, 100, 100, 100); // ?????
-        buttonAdd = new JButton("Toeveogen");
+        buttonAdd = new JButton("Toevoegen");
+        buttonAdd.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                mainFrame.setShapePanel();
+            }
+        } );
         buttonDel = new JButton("Verwijderen");
         buttonChange = new JButton("Wijzigen");
         buttonSave = new JButton("Database");
@@ -76,14 +69,10 @@ public class MainPanel implements Runnable {
         buttonPanel.add(buttonSave);
         buttonPanel.add(buttonPrint);
 
-
-        contentPane.add(buttonPanel);
-
-
-
+        return buttonPanel;
     }
 
-    private void maakShapesLijst(List<Ishape> lijst) {
+    private JTable getJTable(List<Ishape> lijst) {
         String[] kolom ={
                 "Vorm",
                 "Straal",
@@ -111,9 +100,10 @@ public class MainPanel implements Runnable {
                 i++;
             }
 
+         jtable = new JTable(rij, kolom);
+         jtable.setEnabled(false);
 
-        jtable = new JTable(rij, kolom);
-
+         return jtable;
     }
 
 
