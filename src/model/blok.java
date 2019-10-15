@@ -1,6 +1,8 @@
 package model;
 
-public class blok implements Ishape {
+import java.io.Serializable;
+
+public class blok implements Ishape, Serializable {
 
     private double breedte;
     private double lengte;

@@ -1,6 +1,8 @@
 package model;
 
-public class bol implements Ishape {
+import java.io.Serializable;
+
+public class bol implements Ishape, Serializable {
     private double straal;
 
     public bol(double straal) {

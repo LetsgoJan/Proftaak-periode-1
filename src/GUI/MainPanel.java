@@ -43,7 +43,7 @@ public class MainPanel {
         paneloverzicht.setLayout(null);
         paneloverzicht.setBackground(Color.yellow);
         paneloverzicht.setBounds(10,20,800,400);
-        paneloverzicht.add(labelOverzicht);
+        paneloverzicht.add(titelOverzicht);
         paneloverzicht.add(scrollPane);
 
         return  paneloverzicht;
@@ -105,6 +105,7 @@ public class MainPanel {
 
          return jtable;
     }
+
 
 
 

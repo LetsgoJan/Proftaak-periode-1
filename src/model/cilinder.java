@@ -1,6 +1,8 @@
 package model;
 
-public class cilinder implements Ishape{
+import java.io.Serializable;
+
+public class cilinder implements Ishape, Serializable {
     private double straal;
     private double hoogte;
 
@@ -25,6 +27,17 @@ public class cilinder implements Ishape{
     }
 
     @Override
+    public void setHoogte(double hoogte) {
+        this.hoogte = hoogte;
+    }
+
+    @Override
+    public void setStraal(double straal) {
+        this.straal = straal;
+
+    }
+
+    @Override
     public double getBreedte() {
         return 0;
     }
@@ -43,17 +56,5 @@ public class cilinder implements Ishape{
     public void setLengte(double lengte) {
 
     }
-
-    @Override
-    public void setHoogte(double hoogte) {
-        this.hoogte = hoogte;
-    }
-
-    @Override
-    public void setStraal(double straal) {
-        this.straal = straal;
-
-    }
-
 
 }
