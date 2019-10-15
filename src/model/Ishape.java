@@ -2,6 +2,7 @@ package model;
 
 public interface Ishape {
     double shapeInhoud();
+
     double getStraal();
     double getHoogte();
     double getBreedte();

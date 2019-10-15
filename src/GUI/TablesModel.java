@@ -1,8 +1,7 @@
 package GUI;
 
-import BusinessLogic.ShapesType;
 import model.Ishape;
-import model.bol;
+
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;

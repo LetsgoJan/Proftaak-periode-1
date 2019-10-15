@@ -76,10 +76,15 @@ public class MainPanel implements Runnable {
         buttonPanel.add(buttonSave);
         buttonPanel.add(buttonPrint);
 
+        /*
+        interface testen
+        
+         */
 
         contentPane.add(buttonPanel);
 
-
+        DefaultComboBoxModel<ShapesType> sModel = new DefaultComboBoxModel<>(ShapesType.values());
+        System.out.println(ShapesType.BLOK + "<-------------"); // test
 
     }
 
@@ -115,6 +120,7 @@ public class MainPanel implements Runnable {
         jtable = new JTable(rij, kolom);
 
     }
+
 
 
 
